@@ -24,11 +24,13 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 0
     
-    @IBAction func myGuessButtonPressed(_ sender: Any) 
+    var targetValue: Int = 0
+    
+    @IBAction func myGuessButtonPressed(_ sender: Any)
     {
         //PART 7
         
-        let message = "The Value is:\(currentValue)"
+        let message = "The Value is:\(currentValue)" + "\nThe target value is: \(targetValue)"
         
         let alert = UIAlertController(title: "Hello World", message: message, preferredStyle:.alert)
                                
@@ -37,7 +39,7 @@ class ViewController: UIViewController {
                 alert.addAction(action)
                                
                 present(alert, animated: true, completion: nil)
-        
+        startNewRound()
     }
     
     
@@ -52,6 +54,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //Part 1 #1
+    
+        targetValue = Int.random(in: 0...100)
+        
+        currentValue = Int(slider.value)
+        
+        currentValue = lroundf(slider.value)
+        
+        startNewRound()
+        
+        //Completed Part1
         labelButton.setTitle("My Guess", for: .normal)
         
         labelOne.text = "Slide as Close as You Can to:"
@@ -64,6 +77,10 @@ class ViewController: UIViewController {
         
     }
     
+    func startNewRound(){
+        targetValue = Int.random(in: 0...100)
+        currentValue = Int(slider.value)
+    }
    
    
 
