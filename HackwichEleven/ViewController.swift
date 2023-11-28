@@ -26,11 +26,13 @@ class ViewController: UIViewController {
     
     var targetValue: Int = 0
     
+    
+    
     @IBAction func myGuessButtonPressed(_ sender: Any)
     {
         //PART 7
         
-        let message = "Your guess is:\(currentValue)" + "\nThe target value for this round is: \(targetValue)"
+        let message = "The value is:\(currentValue)" + "\nThe target value for this round is: \(targetValue)"
         
         let alert = UIAlertController(title: "Guess The Number Game", message: message, preferredStyle:.alert)
         
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
         
         print("The Value of the Slider is:\(slider.value)")
         currentValue = Int((slider.value))
-    }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,13 +58,17 @@ class ViewController: UIViewController {
         
         //Part 1 #1
         
-        targetValue = Int.random(in: 0...100)
+        //targetValue = Int.random(in: 0...100)
         
         currentValue = Int(slider.value)
         
         currentValue = lroundf(slider.value)
         
         startNewRound()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        
+        slider.setThumbImage(thumbImageNormal, for: .normal)
         
         //Completed Part1
         labelButton.setTitle("My Guess", for: .normal)
@@ -74,19 +80,24 @@ class ViewController: UIViewController {
         labelNumber2.text = "100"
         
     }
+        
+        func updateTargetLabel()
+    
+    {
+            
+        targetLabel.text = "\(targetValue)"
+        
+    }
     
     func startNewRound(){
         targetValue = Int.random(in: 0...100)
         currentValue = Int(slider.value)
+        updateTargetLabel()
+        
     }
     
-    //Problem set 2
-    
-    func updateTargetLabel(){
-        
-        targetLabel.text = String(targetValue)
         
     }
     
     
-}
+

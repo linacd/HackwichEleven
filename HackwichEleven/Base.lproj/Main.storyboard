@@ -16,13 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Zgz-fh-AxH">
+                                <rect key="frame" x="28" y="0.0" width="796" height="393"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-mY-p7i">
                                 <rect key="frame" x="334" y="265" width="185" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
-                                <color key="tintColor" systemColor="systemGray5Color"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <backgroundConfiguration key="background" image="Button-Normal"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="myGuessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEK-yC-vI0"/>
                                 </connections>
@@ -68,7 +74,6 @@
                     </view>
                     <connections>
                         <outlet property="labelButton" destination="OYK-mY-p7i" id="y0w-Qv-C3R"/>
-                        <outlet property="labelNumber" destination="C0U-mV-3ET" id="4j9-S1-1kM"/>
                         <outlet property="labelNumber1" destination="tWL-Ao-tmh" id="aER-Rt-PSA"/>
                         <outlet property="labelNumber2" destination="1ah-pw-iA9" id="did-oE-j1p"/>
                         <outlet property="labelOne" destination="UN6-dJ-KUa" id="aAg-Ry-r5m"/>
@@ -82,14 +87,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="1136" height="640"/>
+        <image name="Button-Normal" width="200" height="74"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
