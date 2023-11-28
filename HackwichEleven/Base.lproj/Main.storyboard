@@ -73,6 +73,7 @@
                         <outlet property="labelNumber2" destination="1ah-pw-iA9" id="did-oE-j1p"/>
                         <outlet property="labelOne" destination="UN6-dJ-KUa" id="aAg-Ry-r5m"/>
                         <outlet property="slider" destination="jMm-bs-bfS" id="LIe-EH-fjr"/>
+                        <outlet property="targetLabel" destination="C0U-mV-3ET" id="RLy-PB-v79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

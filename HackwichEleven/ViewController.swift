@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelOne: UILabel!
     
-    @IBOutlet weak var labelNumber: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     
     @IBOutlet weak var labelNumber1: UILabel!
     
@@ -30,22 +30,22 @@ class ViewController: UIViewController {
     {
         //PART 7
         
-        let message = "The Value is:\(currentValue)" + "\nThe target value is: \(targetValue)"
+        let message = "Your guess is:\(currentValue)" + "\nThe target value for this round is: \(targetValue)"
         
-        let alert = UIAlertController(title: "Hello World", message: message, preferredStyle:.alert)
-                               
-                let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
-                               
-                alert.addAction(action)
-                               
-                present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Guess The Number Game", message: message, preferredStyle:.alert)
+        
+        let action = UIAlertAction(title: "New Round", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
         startNewRound()
     }
     
     
     
     @IBAction func sliderHasMoved(_ sender: Any) {
-       
+        
         print("The Value of the Slider is:\(slider.value)")
         currentValue = Int((slider.value))
     }
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //Part 1 #1
-    
+        
         targetValue = Int.random(in: 0...100)
         
         currentValue = Int(slider.value)
@@ -69,8 +69,6 @@ class ViewController: UIViewController {
         
         labelOne.text = "Slide as Close as You Can to:"
         
-        labelNumber.text = "100"
-        
         labelNumber1.text = "1"
         
         labelNumber2.text = "100"
@@ -81,8 +79,14 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 0...100)
         currentValue = Int(slider.value)
     }
-   
-   
-
+    
+    //Problem set 2
+    
+    func updateTargetLabel(){
+        
+        targetLabel.text = String(targetValue)
+        
+    }
+    
+    
 }
-
